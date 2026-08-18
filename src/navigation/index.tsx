@@ -19,6 +19,7 @@ import {
   MinhasConsultasScreen,
   AdminScreen,
   AgendamentoScreen,
+  PressaoArterialScreen,
 } from "../screens";
 
 // Tipagem das rotas (boas práticas de TypeScript)
@@ -32,6 +33,7 @@ export type RootStackParamList = {
   MinhasConsultas: undefined;
   Admin: undefined;
   Agendamento: undefined;
+  PressaoArterial: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -39,6 +41,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function Navigation() {
   const { usuario, loading, logout } = useAuth();
 
+  // Log mudanças no estado de autenticação
   useEffect(() => {
     if (!loading) {
       if (usuario) {
@@ -182,6 +185,13 @@ export default function Navigation() {
                 title: "Agendamento",
               }}
             />
+            <Stack.Screen
+              name="PressaoArterial"
+              component={PressaoArterialScreen}
+              options={{
+                title: "Pressão Arterial",
+              }}
+            />
           </>
         )}
       </Stack.Navigator>
@@ -197,7 +207,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   headerRight: {
-    marginRight: 8,
+    marginRight: 10,
   },
   userBadge: {
     flexDirection: "row",
@@ -208,7 +218,8 @@ const styles = StyleSheet.create({
   },
   userName: {
     color: "#fff",
-    fontSize: 13,
-    fontWeight: "600",
+    fontSize: 12,
+    fontWeight: "bold",
   },
 });
+

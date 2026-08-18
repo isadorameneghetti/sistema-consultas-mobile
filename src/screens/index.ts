@@ -9,6 +9,7 @@ export { default as NovaConsultaScreen } from "./NovaConsultaScreen";
 export { default as LoginScreen } from "./Login";
 export { default as CadastroPacienteScreen } from "./CadastroPaciente";
 export { default as MinhasConsultasScreen } from "./MinhasConsultas";
-export { default as AdminScreen } from "./Admin";
+export { default as AdminScreen } from "./admin";
 export { default as AgendamentoScreen } from "./Agendamento";
+export { default as PressaoArterialScreen } from "./PressaoArterialScreen"
 
